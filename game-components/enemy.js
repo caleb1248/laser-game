@@ -1,5 +1,5 @@
-class Enemy {
-	constructor() {
+exports.Enemy = class{
+	constructor(game) {
 		this.y = 300;
 		this.x = 600;
 		this.h = 40;
