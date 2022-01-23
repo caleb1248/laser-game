@@ -1,23 +1,24 @@
+import { Enemy } from "./game-components/enemy"
+import { Game } from "./game-components/game";
+import { Floor, Ceiling } from "./game-components/floorceiling";
+import { Player } from "./game-components/player";
 const ground = addImage('ground.png');
 const ceiling = addImage('celing.png');
 const playerImg = addImage('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCgk8cmVjdCB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPg0KCTwvcmVjdD4NCjwvc3ZnPg==');
-
-
-
 
 function frame() {
 	game.fill();
 
 	player.move();
-	player.render();
+	player.render(game);
 
 	floor.move();
-	floor.render();
+	floor.render(game);
 	celing.move();
-	celing.render();
+	celing.render(game);
 
 	enemy.goToTarget();
-	enemy.render();
+	enemy.render(game);
 	if (shooting) {
 		enemy.shoot();
 	}
